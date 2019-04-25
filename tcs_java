@@ -1,0 +1,54 @@
+import java.util.*;
+class Book{
+    private int id;
+    private String title,author;
+    private double price;
+    public int getid()
+    {
+        return id;
+    }
+    public String gettitle()
+    {
+        return title;
+    }
+    public String getauthor()
+    {
+        return author;
+    }
+    Book(int id,String title,String author,double price)
+    {
+        this.id=id;
+        this.author=author;
+        this.title=title;
+        this.price=price;
+    }
+    
+}
+public class Solution{
+    static void getTitle(Book[] book,String a)
+    {
+        for(int i=0;i<4;i++)
+        {
+            if(book[i].gettitle().toUpperCase().contains(a)=="true")
+            {
+                System.out.println(book[i].getid());
+            }
+        }
+    }
+    public static void main(String[] args)
+    {
+        Book[] book=new Book[4];
+        Scanner sc=new Scanner(System.in);
+        for(int i=0;i<4;i++)
+        {
+        int id=sc.nextInt();sc.nextLine();
+        String title=sc.nextLine();
+        String author=sc.nextLine();
+        double price=sc.nextDouble();
+        book[i]=new Book(id,title,author,price);
+        }
+        String c=sc.nextLine();
+        c=c.toUpperCase();
+        getTitle(c);
+    }
+}
